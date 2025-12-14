@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>PHP</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Registrati</h1>
+      <p>Inserisci i tuoi dati per registrarti alla piattaforma</p>
+      <form action="register.php" method="POST">
+        <label for="fname">Nome:</label>
+        <input type="text" id="fname" name="fname" required/><br />
+        <label for="lname">Cognome:</label>
+        <input type="text" id="lname" name="lname" required/><br />
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required/><br />
+        <label for="passwd">Password:</label>
+        <input type="password" id="passwd" name="passwd" required/><br />
+        <a href="index.html">Hai un account? <b>Accedi</b></a><br><br>
+        <button type="submit">Avanti</button>
+      </form>
+    </div>
+  </body>
+</html>
