@@ -2,6 +2,10 @@
     require "../logic/account.php";
 
     session_start();
+    if (!isset($_SESSION['valid']) || $_SESSION['valid'] !== true) {
+        header('Location: /index.html');
+        exit();
+    }
     $accountType = $_SESSION['accountData']['accountType'];
     $records = get_all_accounts();
 ?>
@@ -31,12 +35,12 @@
             <tbody>
                  <?php while($record = $records->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo $record['id'] ?></td>
-                        <td><?php echo $record['fname'] ?></td>
-                        <td><?php echo $record['lname'] ?></td>
-                        <td><?php echo $record['username'] ?></td>
-                        <td class="account-type-cell account-type-<?php echo strtolower($record['accountType']); ?>">
-                            <span class="account-type-label"><?php echo $record['accountType']; ?></span>
+                        <td><?php echo htmlspecialchars($record['id']) ?></td>
+                        <td><?php echo htmlspecialchars($record['fname']) ?></td>
+                        <td><?php echo htmlspecialchars($record['lname']) ?></td>
+                        <td><?php echo htmlspecialchars($record['username']) ?></td>
+                        <td class="account-type-cell account-type-<?php echo htmlspecialchars(strtolower($record['accountType'])); ?>">
+                            <span class="account-type-label"><?php echo htmlspecialchars($record['accountType']); ?></span>
                             <div class="account-type-dropdown">
                                 <div class="account-type-dropdown-option" onclick="update_account_type(<?php echo $record['id'] ?>, 'User')">User</div>
                                 <div class="account-type-dropdown-option" onclick="update_account_type(<?php echo $record['id'] ?>, 'Admin')">Admin</div>

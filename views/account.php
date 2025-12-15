@@ -20,7 +20,6 @@ $accountType = htmlspecialchars($_SESSION['accountData']['accountType']);
         <p>Username: <b><?= $username ?></b></p>
         <p>Session ID: <b><?= ($sessionId >= 0) ? $sessionId : "Id non valido" ?></b></p>
         <?php if ($accountType == 'Admin'): ?>
-        <!-- REFER TO account.php -->
             <a class="user-link" href="/protected/dashboard.php">Vai alla dashboard Admin</a>
         <?php endif; ?>
     </div>
