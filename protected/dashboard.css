@@ -1,0 +1,131 @@
+.delete-btn {
+    background: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(229, 57, 53, 0.08);
+}
+
+.delete-btn:hover {
+    background: #b71c1c;
+}
+
+/* Dropdown per cambio account type */
+.account-type-user,
+.account-type-admin {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.account-type-dropdown {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background: #fff;
+    min-width: 120px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    border-radius: 8px;
+    z-index: 9999;
+    margin-top: 6px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.account-type-cell.open .account-type-dropdown {
+    display: block;
+}
+
+.account-type-dropdown-option {
+    padding: 10px 18px;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.15s;
+}
+
+.account-type-dropdown-option:hover {
+    background: #e3f4fc;
+    color: #1565c0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #6ccef5;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+    margin: 0 auto 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(108, 206, 245, 0.12), 0 1.5px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+tr {
+    position: relative;
+    z-index: 1;
+}
+
+th,
+td {
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 1.08rem;
+    cursor: pointer;
+}
+
+th {
+    background: #e3f4fc;
+    color: #1565c0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background: #f8fbfd;
+}
+
+tr:hover {
+    background: #e0f2fe;
+    transition: background 0.2s;
+}
+
+.account-type-user {
+    background: #6ccef5;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 7px 0;
+    letter-spacing: 0.5px;
+}
+
+.account-type-admin {
+    background: #e53935;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 7px 0;
+    letter-spacing: 0.5px;
+}
